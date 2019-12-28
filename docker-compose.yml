@@ -1,0 +1,14 @@
+version: "2"
+services:
+  muximux:
+    image: linuxserver/muximux
+    container_name: t01muximux
+    environment:
+      - PUID=1024
+      - PGID=100
+      - TZ=Europe/Paris
+    volumes:
+      - /volume1/docker/config/muximux:/config
+    ports:
+      - 2380:80
+    restart: unless-stopped
